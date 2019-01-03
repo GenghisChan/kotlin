@@ -8,4 +8,11 @@ class Weapon(var name: String = "Fist", var damageInflicted: Int = 1) {
             Damage Inflicted : $damageInflicted
         """)
     }
+
+    override fun toString(): String {
+        return """
+            weapon : $name
+            damage : $damageInflicted
+        """
+    }
 }

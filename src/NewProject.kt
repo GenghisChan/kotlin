@@ -7,10 +7,19 @@ fun main(args: Array<String>) {
 
     val karla = Player("karla", 5, 2, 100)
     karla.weapon = chris.weapon
-    karla.show()
-    chris.weapon = Weapon("Spear", 10)
-    chris.show()
+    println(karla)
+    val spear = Weapon("Spear", 10)
+    chris.weapon = spear
+    println(chris)
 
+    val redPotion = Loot("red potion", LootType.POTION, 10.00)
+    val chainmail = Loot("Chainmail", LootType.ARMOR, 20.00)
+
+    chris.inventory.add(chainmail)
+    chris.inventory.add(redPotion)
+    chris.showInventory()
+    println(spear)
+    println(redPotion)
 
 }
 
