@@ -1,0 +1,4 @@
+package newProject
+
+class Loot {
+}
