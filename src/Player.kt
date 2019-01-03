@@ -3,7 +3,7 @@ package newProject
 class Player(val name: String, var lives: Int = 3, var level: Int = 1, var score: Int = 0) {
 
     var weapon = Weapon()
-    val inventory = ArrayList<Loot>()
+    private val inventory = ArrayList<Loot>()
 
     fun show(){
         if(lives > 0) {
@@ -37,5 +37,22 @@ class Player(val name: String, var lives: Int = 3, var level: Int = 1, var score
         println("===================================")
     }
 
+    fun addLoot(item: Loot) {
+        inventory.add(item)
+    }
+
+    fun dropLoot(item: Loot) {
+        if(inventory.contains(item)){
+            inventory.remove(item)
+            println("${item.name} has been removed\n")
+        } else {
+            println("${item.name} not found\n")
+        }
+    }
+
+    fun dropLoot(name: String): Boolean {
+        println("$name has been dropped!")
+        return inventory.removeIf { it.name == name}
+    }
 
 }
