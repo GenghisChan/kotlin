@@ -19,8 +19,7 @@ class Player(val name: String, var lives: Int = 3, var level: Int = 1, var score
             lives : $lives
             level : $level
             score : $score
-            weapon : ${weapon.name}
-            damage : ${weapon.damageInflicted}
+            $weapon
             """
     }
 
@@ -29,7 +28,11 @@ class Player(val name: String, var lives: Int = 3, var level: Int = 1, var score
         println("")
         println("Items")
         println("-----")
-        inventory.forEach { item -> println(item.name)}
+        if(inventory.count() > 0) {
+            inventory.forEach { item -> println("$item \n")}
+        } else {
+            println("Your inventory is empty")
+        }
         println("")
         println("===================================")
     }
